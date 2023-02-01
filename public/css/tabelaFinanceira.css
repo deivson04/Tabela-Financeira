@@ -1,0 +1,25 @@
+
+  
+  body{
+    background: #78969d;
+  }
+  
+  .container{
+    margin-top: 50px;
+    margin: auto;
+    margin-right: -20%;
+    
+  }
+  
+  h1{
+    text-align: center;
+  }
+
+  .conta a {
+   color: black;
+   position: absolute;
+   margin-top: 10px;
+
+  }
+ 
+  
