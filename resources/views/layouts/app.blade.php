@@ -9,7 +9,7 @@
     <link href="{{asset('css/tabelaFinanceira.css')}}" rel="stylesheet">
 </head>
 <body>
-  <h1 class="title">Tabela Financeira</h1>      
+        
         <div class="container">
           
         @yield('conteudo')

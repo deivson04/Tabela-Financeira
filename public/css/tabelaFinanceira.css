@@ -6,12 +6,11 @@
   
   
   .container{
-    height: 350px;
+    height: 620px;
     width: 350px;
     background: #E6E6FA;
   }
-  
-  
+   
   
   .title{
     text-align: center;
@@ -22,6 +21,12 @@
    position: absolute;
    margin-top: 10px;
 
+  }
+
+  .senha a {
+    color: black;
+    position: absolute;
+    margin-top: 35px;
   }
  
   
