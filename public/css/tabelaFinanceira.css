@@ -1,17 +1,19 @@
 
   
-  body{
-    background: #78969d;
+  body {
+    background: #E6E6FA;
   }
+  
   
   .container{
-    margin-top: 50px;
-    margin: auto;
-    margin-right: -20%;
-    
+    height: 350px;
+    width: 350px;
+    background: #E6E6FA;
   }
   
-  h1{
+  
+  
+  .title{
     text-align: center;
   }
 
