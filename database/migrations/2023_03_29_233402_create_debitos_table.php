@@ -16,8 +16,9 @@ class CreateDebitosTable extends Migration
         Schema::create('debitos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('descricao da comprar', 100);
-            $table->string('tipo de pagamento', 100);
+            $table->string('nome do devedor');
+            $table->string('descricao da comprar');
+            $table->string('tipo de pagamento');
             $table->integer('parcela da comprar');
             $table->date('data da comprar');
             $table->foreign('user_id')->references('id')->on('users');
