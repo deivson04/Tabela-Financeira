@@ -13,10 +13,12 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    // Lista todos os dados do banco de dados
+    // Lista todos os registro do banco de dados
     public function index()
     {
+       $data = Users::all();
        
+       return response()->json(['data' => $data]);
     }
 
     /**
@@ -29,9 +31,11 @@ class UserController extends Controller
     // Guarda todos os dados no banco de dados
     public function store(Request $request)
     {
-        $user = new Users;
-
-        $user->nome = $request->nome;
+        $data = $request->all();
+        
+        Users::create($data);
+        
+        return response()->json(['registrado' => $data]);
     }
 
     /**
