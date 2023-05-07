@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('users', [UserController::class, 'index']);
 Route::post('store', [UserController::class, 'store']);
+Route::put('atualizar/{id}', [UserController::class, 'update']);

@@ -62,7 +62,11 @@ class UserController extends Controller
     // Atualiza uma informação do banco de dados
     public function update(Request $request, $id)
     {
-        //
+        $dataRequest = $request->all();
+        $data = Users::findOrfail($id); 
+        $data->update($dataRequest);
+       
+        return response()->json(['msg' => 'Dados Atualizado com sucesso!', 'atualizado' => $data]);
     }
 
     /**
