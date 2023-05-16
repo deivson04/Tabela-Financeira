@@ -11,5 +11,5 @@ class Login extends Model
     protected $table = 'logins';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['email','senha','user_id']; 
+    protected $fillable = ['email','password','user_id']; 
 }

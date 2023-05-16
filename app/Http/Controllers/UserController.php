@@ -79,6 +79,9 @@ class UserController extends Controller
     // Deleta uma informação na tabela
     public function destroy($id)
     {
-        //
+        $data = Users::find($id);
+        $data->delete();
+
+        return response()->json(['message' => 'Registro excluido com sucesso', 'data' => $data]);
     }
 }

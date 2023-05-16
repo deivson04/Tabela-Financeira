@@ -14,8 +14,10 @@ class UserSeeder extends Seeder
     public function run()
     {
         Users::create([
-            'nome' => 'Deivson',
-            'email' => 'araujodeivson@gmail.com'
+            'name' => 'Deivson',
+            'email' => 'araujodeivson@gmail.com',
+            'cpf' => '07723215401',
+            'senha' => '$2a$12$uNaWjp8kjQMidmkqj9QdsOuu2ZdUfvq2rSLomsHCJl/.XqtxoTqES'
             
         ]);
     

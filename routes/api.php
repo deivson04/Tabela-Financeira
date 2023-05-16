@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'v1'
+], function ($router) {
+Route::post('login', [AuthController::class, 'login']);
 Route::get('users', [UserController::class, 'index']);
 Route::post('store', [UserController::class, 'store']);
 Route::put('atualizar/{id}', [UserController::class, 'update']);
+Route::delete('apagar/{id}', [UserController::class, 'destroy']);
+
+});
+
+

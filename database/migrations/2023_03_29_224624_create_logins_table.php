@@ -17,7 +17,7 @@ class CreateLoginsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('email', 250);
-            $table->string('senha', 50);
+            $table->string('password', 150);
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
