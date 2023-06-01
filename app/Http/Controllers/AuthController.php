@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
-use App\Models\Login;
+//use App\Models\Login;
+use Illuminate\Validation\Validator;
 class AuthController extends Controller
 {
     /**
@@ -28,8 +29,11 @@ class AuthController extends Controller
      
      public function login()
     {
+       
+        
+        
         $credentials = request(['email', 'password']);
-
+        
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
@@ -81,7 +85,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 480
         ]);
     }
 }

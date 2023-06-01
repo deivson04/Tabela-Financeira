@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Users;
+use Illuminate\Validation\Validator;
 
 class UserController extends Controller
 {
@@ -29,8 +31,18 @@ class UserController extends Controller
      */
     
     // Guarda todos os dados no banco de dados
-    public function store(Request $request)
+    public function store(Request  $request)
     {
+        $validation = \Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+            'cpf' => 'required|min:3',
+            'password' => 'required'
+            ]);
+        if($validation->fails()){
+          return response()->json([$validation->errors()], 422);
+        }
+        
         $data = $request->all();
         
         Users::create($data);
